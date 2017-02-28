@@ -1,0 +1,47 @@
+{
+ "type":"index_hadoop",
+ "spec": {
+  "dataSchema" : {
+    "dataSource" : "test_data",
+    "parser" : {
+      "type" : "hadoopyString",
+      "parseSpec" : {
+        "format" : "csv",
+    "columns" : ["s2Id","segId","udId","time"],
+        "timestampSpec" : {
+          "column" : "time",
+          "format" : "auto"
+        },
+        "dimensionsSpec" : {
+          "dimensions": ["segId","s2Id","udId"]
+        }
+      }
+    },
+    "metricsSpec" : [
+         {"type": "thetaSketch",
+         "name": "udid_sketch",
+         "fieldName": "udId"}
+    ],
+    "granularitySpec" : {
+      "type" : "uniform",
+      "segmentGranularity" : "DAY",
+      "queryGranularity" : "DAY",
+      "intervals" : [ "2017-01-20/2017-01-21" ]
+    }
+  },
+  "ioConfig" : {
+    "type" : "hadoop",
+    "inputSpec" : {
+      "type" : "static",
+      "paths" : "/home/inmobi/sample_data/data.csv"
+    }
+  },
+  "tuningConfig" : {
+     "type" : "hadoop",
+      "partitionsSpec" : {
+        "type" : "hashed",
+        "targetPartitionSize" : 5000000
+      }
+  }
+}
+}

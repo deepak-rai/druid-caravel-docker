@@ -1,0 +1,21 @@
+{
+  "queryType": "groupBy",
+  "dataSource": "test_data",
+  "granularity": "ALL",
+  "dimensions": [],
+  "filter": {
+    "type": "or",
+    "fields": [
+{"type": "selector", "dimension": "s2Id", "value": "5964596792141021184"}
+]
+  },
+  "aggregations": [
+           {
+        "type": "thetaSketch", "name": "4000_unique_users", "fieldName": "udid_sketch"
+      }
+  ],
+
+  "intervals": [
+    "2017-01-20/2017-01-21"
+  ]
+}
