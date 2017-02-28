@@ -29,7 +29,6 @@ cd ${CURR_DIR}
 # start process
 JAVA_ARGS="${JAVA_ARGS} -Xmx512m -Duser.timezone=UTC -Dfile.encoding=UTF-8"
 JAVA_ARGS="${JAVA_ARGS} -Ddruid.extensions.localRepository=${MAVEN_DIR}"
-JAVA_ARGS="${JAVA_ARGS} -Ddruid.extensions.remoteRepositories=[\"http://artifactory-maven.corp.inmobi.com/artifactory/releases/\",\"https://artifactory.corp.inmobi.com/artifactory/snapshots/\",\"https://artifactory.corp.inmobi.com/artifactory/list/jcenter-cache/\",\"https://artifactory.corp.inmobi.com/artifactory/list/central-cache/\",\"https://artifactory.corp.inmobi.com/artifactory/list/apache-maven-cache/\",\"https://artifactory.corp.inmobi.com/artifactory/list/jboss-releases-cache/\",\"https://artifactory.corp.inmobi.com/artifactory/list/repo1-cache/\"]"
 
 DRUID_CP="${SCRIPT_DIR}/config/_common"
 DRUID_CP="${DRUID_CP}:${SCRIPT_DIR}/config/$SERVER_TYPE"

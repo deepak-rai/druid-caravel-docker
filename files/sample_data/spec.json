@@ -33,7 +33,7 @@
     "type" : "hadoop",
     "inputSpec" : {
       "type" : "static",
-      "paths" : "/home/inmobi/sample_data/data.csv"
+      "paths" : "/home/druid/sample_data/data.csv"
     }
   },
   "tuningConfig" : {

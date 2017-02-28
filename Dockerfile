@@ -1,6 +1,4 @@
-#FROM dockerhub.corp.inmobi.com/idp/docker-jvm-8:20160912_11
-
-# We base our image on Ubuntu 12.04 (Precise Pangolin)
+# Ubuntu 12.04 (Precise Pangolin)
 FROM ubuntu:12.04
 
 # Download latest package list (required)
@@ -29,10 +27,10 @@ RUN pip install virtualenv
 RUN pip install superset
 RUN virtualenv venv
 
-RUN useradd -U inmobi && mkdir -p /home/inmobi/
+RUN useradd -U druid && mkdir -p /home/druid/
 
 ENV tmpdir /tmp
-ENV home /home/inmobi/
+ENV home /home/druid/
 
 EXPOSE 8081
 EXPOSE 8082
